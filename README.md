@@ -1,1 +1,3 @@
-# c_sharp_console_projects
+# C# Simple Console Projects
+
+This is a collection of simple console C# projects
