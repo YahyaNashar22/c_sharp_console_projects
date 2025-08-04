@@ -3,4 +3,5 @@
   <Project Path="Dice/Dice.csproj" />
   <Project Path="Fighting/Fighting.csproj" />
   <Project Path="NumberGuessing/NumberGuessing.csproj" />
+  <Project Path="RockPaperScissor/RockPaperScissor.csproj" />
 </Solution>
