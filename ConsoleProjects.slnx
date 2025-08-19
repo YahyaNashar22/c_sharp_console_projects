@@ -3,6 +3,7 @@
   <Project Path="Dice/Dice.csproj" />
   <Project Path="Fighting/Fighting.csproj" />
   <Project Path="NumberGuessing/NumberGuessing.csproj" />
+  <Project Path="OperatorOverloading/OperatorOverloading.csproj" />
   <Project Path="RockPaperScissor/RockPaperScissor.csproj" />
   <Project Path="Threading/Threading.csproj" />
   <Project Path="TicTacToe/TicTacToe.csproj" />
