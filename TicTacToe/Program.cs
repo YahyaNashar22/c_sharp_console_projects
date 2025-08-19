@@ -99,5 +99,7 @@ class Program
     {
       Console.WriteLine("Draw!");
     }
+
+    Console.ReadLine();
   }
 }
