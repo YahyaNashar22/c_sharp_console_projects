@@ -3,7 +3,7 @@ using System.Threading;
 
 class Program
 {
-  public void display1()
+  public void Display1()
   {
     Console.WriteLine("Start Display 1");
     // ? threads in the monitor will execute in sync and not concurrently
@@ -12,12 +12,12 @@ class Program
     {
       Console.WriteLine($"display 1: {i}");
       // ? will pause the thread for the current thread ( th1 )
-      // Thread.Sleep(1000);
+      Thread.Sleep(1000);
     }
     Monitor.Exit(this);
     Console.WriteLine("End Display 1");
   }
-  public void display2()
+  public void Display2()
   {
     // ? threads in the monitor will execute in sync and not concurrently
     Monitor.Enter(this);
@@ -27,7 +27,7 @@ class Program
     {
       Console.WriteLine($"display 2: {i}");
       // ? will pause the thread for the current thread ( th2 )
-      // Thread.Sleep(1200);
+      Thread.Sleep(1200);
 
     }
     Monitor.Exit(this);
@@ -44,8 +44,8 @@ class Program
     Console.WriteLine($"Welcome!");
 
     // create the delegate of the thread
-    ThreadStart ts1 = new ThreadStart(p.display1);
-    ThreadStart ts2 = new ThreadStart(p.display2);
+    ThreadStart ts1 = new ThreadStart(p.Display1);
+    ThreadStart ts2 = new ThreadStart(p.Display2);
 
     // create the object of the thread
     Thread th1 = new Thread(ts1);
