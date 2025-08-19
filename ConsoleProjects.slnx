@@ -4,5 +4,6 @@
   <Project Path="Fighting/Fighting.csproj" />
   <Project Path="NumberGuessing/NumberGuessing.csproj" />
   <Project Path="RockPaperScissor/RockPaperScissor.csproj" />
+  <Project Path="Threading/Threading.csproj" />
   <Project Path="TodoList/TodoList.csproj" />
 </Solution>
