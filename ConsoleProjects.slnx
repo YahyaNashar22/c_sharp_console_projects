@@ -2,6 +2,7 @@
   <Project Path="Calculator/Calculator.csproj" />
   <Project Path="Dice/Dice.csproj" />
   <Project Path="Fighting/Fighting.csproj" />
+  <Project Path="Indexers/Indexers.csproj" />
   <Project Path="MemoryMatch/MemoryMatch.csproj" />
   <Project Path="NumberGuessing/NumberGuessing.csproj" />
   <Project Path="OperatorOverloading/OperatorOverloading.csproj" />
