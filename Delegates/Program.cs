@@ -4,6 +4,7 @@
   delegate int MyDelegate2(int x, int y);
   delegate string MyDelegate3(int x, int y);
   delegate int AnonymousDelegate(int x, int y);
+  delegate string lambdaDelegate(string name);
 
   static void Method1()
   {
@@ -60,6 +61,25 @@
     };
 
     Console.WriteLine(multiplication(3, 5));
+
+    Console.WriteLine("-+-+-+-+-+-+-+-+-+");
+
+
+    #endregion
+
+    #region lambdas
+
+    Func<int, int> lambdaMethod = x => x * 12;
+    Console.WriteLine(lambdaMethod(2));
+
+    Console.WriteLine("-+-+-+-+-+-+-+-+-+");
+
+    lambdaDelegate lambdaMethod2 = name => $"your name is {name}";
+
+    Console.WriteLine(lambdaMethod2("yahya"));
+
+    Console.WriteLine("-+-+-+-+-+-+-+-+-+");
+
 
     #endregion
   }
