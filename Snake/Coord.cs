@@ -15,11 +15,16 @@ class Coord
 
   public override bool Equals(object? obj)
   {
-    if ((obj != null) || !GetType().Equals(obj.GetType()))
+    if ((obj == null) || !GetType().Equals(obj!.GetType()))
     {
       return false;
     }
     Coord other = (Coord)obj;
     return x == other.x && y == other.y;
+  }
+
+  public override int GetHashCode()
+  {
+    return HashCode.Combine(x, y);
   }
 }
