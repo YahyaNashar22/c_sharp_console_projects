@@ -8,6 +8,7 @@
   <Project Path="NumberGuessing/NumberGuessing.csproj" />
   <Project Path="OperatorOverloading/OperatorOverloading.csproj" />
   <Project Path="RockPaperScissor/RockPaperScissor.csproj" />
+  <Project Path="Snake/Snake.csproj" />
   <Project Path="Threading/Threading.csproj" />
   <Project Path="TicTacToe/TicTacToe.csproj" />
   <Project Path="TodoList/TodoList.csproj" />
