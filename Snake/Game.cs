@@ -6,11 +6,17 @@ class Game
   Coord applePosition = new Coord(rand.Next(1, gridDimensions.X - 1), rand.Next(1, gridDimensions.Y - 1));
   int frameDelayMil = 100;
   Direction movementDirection = Direction.Down;
+  int score = 0;
+
+  List<Coord> snakePositionHistory = new List<Coord>();
+  int tailLength = 1;
+
   public void DrawGrid()
   {
     while (true)
     {
       Console.Clear();
+      Console.WriteLine($"Score: {score}");
       snakePosition.ApplyMovementDirection(movementDirection);
 
       for (int y = 0; y < gridDimensions.Y; y++)
@@ -19,7 +25,7 @@ class Game
         {
           Coord currentCoord = new Coord(x, y);
 
-          if (snakePosition.Equals(currentCoord))
+          if (snakePosition.Equals(currentCoord) || snakePositionHistory.Contains(currentCoord))
           {
             Console.Write("■");
           }
@@ -35,6 +41,30 @@ class Game
         }
         Console.WriteLine();
       }
+
+      if (snakePosition.Equals(applePosition))
+      {
+        tailLength++;
+        score++;
+        applePosition = new Coord(rand.Next(1, gridDimensions.X - 1), rand.Next(1, gridDimensions.Y - 1));
+      }
+      else if (snakePosition.X == 0 || snakePosition.Y == 0 || snakePosition.X == gridDimensions.X - 1 || snakePosition.Y == gridDimensions.Y - 1 || snakePositionHistory.Contains(snakePosition))
+      {
+        score = 0;
+        tailLength = 1;
+        snakePosition = new Coord(10, 1);
+        snakePositionHistory.Clear();
+        movementDirection = Direction.Down;
+        continue;
+      }
+
+      snakePositionHistory.Add(new Coord(snakePosition.X, snakePosition.Y));
+
+      if (snakePositionHistory.Count > tailLength)
+      {
+        snakePositionHistory.RemoveAt(0);
+      }
+
       DateTime time = DateTime.Now;
       while ((DateTime.Now - time).Milliseconds < frameDelayMil)
       {
